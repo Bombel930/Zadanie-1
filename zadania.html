@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 2 - obliczenia</title>
+</head>
+<body onload="oblicz1(); oblicz2(); oblicz3(); oblicz4(); oblicz5(); oblicz6(); oblicz7(); oblicz8(); oblicz9(); oblicz10();">
+<main>
+    <header>    
+        <p>Zadanie 2</p>
+    </header>
+    <div>
+        <section>
+            <p>1. Suma trzech liczb</p>
+                <div>
+                    <span>2</span>
+                    <input id="sum-1" type="hidden" value="2">
+                    <span>3</span>
+                    <input id="sum-2" type="hidden" value="3">
+                    <span>4</span>
+                    <input id="sum-3" type="hidden" value="4">
+                </div>
+                <p id="sum-result"></p>
+            <script>
+                function oblicz1() {
+                    var liczba1 = Number(document.getElementById("sum-1").value);
+                    var liczba2 = Number(document.getElementById("sum-2").value);
+                    var liczba3 = Number(document.getElementById("sum-3").value);
+                    document.getElementById("sum-result").innerHTML = "Suma: " + (liczba1 + liczba2 + liczba3);
+                }
+            </script>
+        </section>
+
+        <section>
+            <p>2. Średnia trzech liczb</p>
+                <div>
+                    <span>2</span>
+                    <input id="average-1" type="hidden" value="2">
+                    <span>4</span>
+                    <input id="average-2" type="hidden" value="4">
+                    <span>6</span>
+                    <input id="average-3" type="hidden" value="6">
+                </div>
+                <p id="average-result"></p>
+            <script>
+                function oblicz2() {
+                    var liczba1 = Number(document.getElementById("average-1").value);
+                    var liczba2 = Number(document.getElementById("average-2").value);
+                    var liczba3 = Number(document.getElementById("average-3").value);
+                    document.getElementById("average-result").innerHTML = "Średnia: " + ((liczba1 + liczba2 + liczba3) / 3);
+                }
+            </script>
+        </section>
+
+        <section>
+            <p>3. Suma, różnica i iloczyn</p>
+                <div>
+                    <span>8</span>
+                    <input id="operations-1" type="hidden" value="8">
+                    <span>3</span>
+                    <input id="operations-2" type="hidden" value="3">
+                </div>
+                <p id="operations-result"></p>
+            <script>
+                function oblicz3() {
+                    var liczba1 = Number(document.getElementById("operations-1").value);
+                    var liczba2 = Number(document.getElementById("operations-2").value);
+                    document.getElementById("operations-result").innerHTML = "Suma: " + (liczba1 + liczba2) + "<br>Różnica: " + (liczba1 - liczba2) + "<br>Iloczyn: " + (liczba1 * liczba2);
+                }
+            </script>
+        </section>
+
+        <section>
+            <p>4. Pierwiastek</p>
+                <span>9</span>
+                <input id="root" type="hidden" value="9">
+                <p id="root-result"></p>
+            <script>
+                function oblicz4() {
+                    var liczba = Number(document.getElementById("root").value);
+                    document.getElementById("root-result").innerHTML = "Pierwiastek: " + Math.sqrt(liczba);
+                }
+            </script>
+        </section>
+
+        <section>
+            <p>5. Pole kwadratu</p>
+                <span>5</span>
+                <input id="square-side" type="hidden" value="5">
+                <p id="square-result"></p>
+            <script>
+                function oblicz5() {
+                    var bok = Number(document.getElementById("square-side").value);
+                    document.getElementById("square-result").innerHTML = "Pole kwadratu: " + (bok * bok);
+                }
+            </script>
+        </section>
+
+        <section>
+            <p>6. Pole prostopadłościanu</p>
+                <div>
+                    <span>2</span>
+                    <input id="cuboid-a" type="hidden" value="2">
+                    <span>3</span>
+                    <input id="cuboid-b" type="hidden" value="3">
+                    <span>4</span>
+                    <input id="cuboid-c" type="hidden" value="4">
+                </div>
+                <p id="cuboid-result"></p>
+            <script>
+                function oblicz6() {
+                    var bok1 = Number(document.getElementById("cuboid-a").value);
+                    var bok2 = Number(document.getElementById("cuboid-b").value);
+                    var bok3 = Number(document.getElementById("cuboid-c").value);
+                    var pole = 2 * (bok1 * bok2 + bok1 * bok3 + bok2 * bok3);
+                    document.getElementById("cuboid-result").innerHTML = "Pole całkowite: " + pole;
+                }
+            </script>
+        </section>
+
+        <section>
+            <p>7. Pole i obwód koła</p>
+                <span>3</span>
+                <input id="circle-radius" type="hidden" value="3">
+                <p id="circle-result"></p>
+            <script>
+                function oblicz7() {
+                    var promien = Number(document.getElementById("circle-radius").value);
+                    var pole = Math.PI * promien * promien;
+                    var obwod = 2 * Math.PI * promien;
+                    document.getElementById("circle-result").innerHTML = "Pole: " + pole + "<br>Obwód: " + obwod;
+                }
+            </script>
+        </section>
+
+        <section>
+            <p>8. Przejazd Gdańsk–Szczecin</p>
+                <span>6</span>
+                <input id="route-price" type="hidden" value="6">
+                <p id="route-result"></p>
+            <script>
+                function oblicz8() {
+                    var cena = Number(document.getElementById("route-price").value);
+                    var koszt = 360 * 8 / 100 * cena;
+                    document.getElementById("route-result").innerHTML = "Koszt przejazdu: " + koszt + " zł";
+                }
+            </script>
+        </section>
+
+        <section>
+            <p>9. Dowolna trasa</p>
+                <div>
+                    <span>6</span>
+                    <input id="trip-price" type="hidden" value="6">
+                    <span>100</span>
+                    <input id="trip-distance" type="hidden" value="100">
+                    <span>7</span>
+                    <input id="trip-consumption" type="hidden" value="7">
+                </div>
+                <p id="trip-result"></p>
+            <script>
+                function oblicz9() {
+                    var cena = Number(document.getElementById("trip-price").value);
+                    var trasa = Number(document.getElementById("trip-distance").value);
+                    var spalanie = Number(document.getElementById("trip-consumption").value);
+                    var koszt = cena * trasa * spalanie / 100;
+                    document.getElementById("trip-result").innerHTML = "Koszt przejazdu: " + koszt + " zł";
+                }
+            </script>
+        </section>
+
+        <section>
+            <p>10. Zysk z lokaty po podatku Belki</p>
+                <span>1000</span>
+                <input id="deposit" type="hidden" value="1000">
+                <p id="deposit-result"></p>
+            <script>
+                function oblicz10() {
+                    var kwota = Number(document.getElementById("deposit").value);
+                    var odsetki = kwota * 0.08;
+                    var podatek = odsetki * 0.19;
+                    document.getElementById("deposit-result").innerHTML = "Zysk netto: " + (odsetki - podatek) + " zł";
+                }
+            </script>
+        </section>
+    </div>
+</main>
+</body>
+</html>
